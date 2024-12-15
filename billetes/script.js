@@ -110,39 +110,64 @@ const paisesBilletes = {
         {
             denominacion: '20 Pesos',
             versiones: [
-                { anioEmision: '2017', imagenFrente: 'ruta/a/argentina/argentina_20pesos_frente.jpg', imagenDorso: 'ruta/a/argentina/argentina_20pesos_dorso.jpg' }
+                { anioEmision: '1999', imagenFrente: 'ruta/a/argentina/argentina_20pesos_anterior_frente.jpg', imagenDorso: 'ruta/a/argentina/argentina_20pesos_anterior_dorso.jpg' },
+                { anioEmision: '2017', imagenFrente: 'ruta/a/argentina/argentina_20pesos_nueva_frente.jpg', imagenDorso: 'ruta/a/argentina/argentina_20pesos_nueva_dorso.jpg' }
             ]
         },
         {
             denominacion: '50 Pesos',
             versiones: [
-                { anioEmision: '2018', imagenFrente: 'ruta/a/argentina/argentina_50pesos_frente.jpg', imagenDorso: 'ruta/a/argentina/argentina_50pesos_dorso.jpg' }
+                { anioEmision: '1999', imagenFrente: 'ruta/a/argentina/argentina_50pesos_anterior_frente.jpg', imagenDorso: 'ruta/a/argentina/argentina_50pesos_anterior_dorso.jpg' },
+                { anioEmision: '2017', imagenFrente: 'ruta/a/argentina/argentina_50pesos_malvinas_frente.jpg', imagenDorso: 'ruta/a/argentina/argentina_50pesos_malvinas_dorso.jpg' },
+                { anioEmision: '2020', imagenFrente: 'ruta/a/argentina/argentina_50pesos_nueva_frente.jpg', imagenDorso: 'ruta/a/argentina/argentina_50pesos_nueva_dorso.jpg' }
             ]
         },
         {
             denominacion: '100 Pesos',
             versiones: [
-                { anioEmision: '2018', imagenFrente: 'ruta/a/argentina/argentina_100pesos_frente.jpg', imagenDorso: 'ruta/a/argentina/argentina_100pesos_dorso.jpg' }
+                { anioEmision: '1999', imagenFrente: 'ruta/a/argentina/argentina_100pesos_anterior_frente.jpg', imagenDorso: 'ruta/a/argentina/argentina_100pesos_anterior_dorso.jpg' },
+                { anioEmision: '2017', imagenFrente: 'ruta/a/argentina/argentina_100pesos_eva_frente.jpg', imagenDorso: 'ruta/a/argentina/argentina_50pesos_eva_dorso.jpg' },
+                { anioEmision: '2020', imagenFrente: 'ruta/a/argentina/argentina_100pesos_nueva_frente.jpg', imagenDorso: 'ruta/a/argentina/argentina_100pesos_nueva_dorso.jpg' }
             ]
         },
         {
             denominacion: '200 Pesos',
             versiones: [
-                { anioEmision: '2019', imagenFrente: 'ruta/a/argentina/argentina_200pesos_frente.jpg', imagenDorso: 'ruta/a/argentina/argentina_200pesos_dorso.jpg' }
+                { anioEmision: '2016', imagenFrente: 'ruta/a/argentina/argentina_200pesos_actual_frente.jpg', imagenDorso: 'ruta/a/argentina/argentina_200pesos_actual_dorso.jpg' }
             ]
         },
         {
             denominacion: '500 Pesos',
             versiones: [
-                { anioEmision: '2019', imagenFrente: 'ruta/a/argentina/argentina_500pesos_frente.jpg', imagenDorso: 'ruta/a/argentina/argentina_500pesos_dorso.jpg' }
+                { anioEmision: '2016', imagenFrente: 'ruta/a/argentina/argentina_500pesos_actual_frente.jpg', imagenDorso: 'ruta/a/argentina/argentina_500pesos_actual_dorso.jpg' }
             ]
         },
         {
             denominacion: '1000 Pesos',
             versiones: [
-                { anioEmision: '2017', imagenFrente: 'ruta/a/argentina/argentina_1000pesos_frente.jpg', imagenDorso: 'ruta/a/argentina/argentina_1000pesos_dorso.jpg' }
+                { anioEmision: '2017', imagenFrente: 'ruta/a/argentina/argentina_1000pesos_anterior_frente.jpg', imagenDorso: 'ruta/a/argentina/argentina_1000pesos_anterior_dorso.jpg' },
+                { anioEmision: '2022', imagenFrente: 'ruta/a/argentina/argentina_1000pesos_nuevo_frente.jpg', imagenDorso: 'ruta/a/argentina/argentina_1000pesos_nuevo_dorso.jpg' }
+            ]
+        },
+        {
+            denominacion: '2000 Pesos',
+            versiones: [
+                { anioEmision: '2022', imagenFrente: 'ruta/a/argentina/argentina_2000pesos_actual_frente.jpg', imagenDorso: 'ruta/a/argentina/argentina_2000pesos_actual_dorso.jpg' }
+            ]
+        },
+        {
+            denominacion: '10000 Pesos',
+            versiones: [
+                { anioEmision: '2024', imagenFrente: 'ruta/a/argentina/argentina_10000pesos_actual_frente.jpg', imagenDorso: 'ruta/a/argentina/argentina_10000pesos_actual_dorso.jpg' }
+            ]
+        },
+        {
+            denominacion: '20000 Pesos',
+            versiones: [
+                { anioEmision: '2024', imagenFrente: 'ruta/a/argentina/argentina_20000pesos_actual_frente.jpg', imagenDorso: 'ruta/a/argentina/argentina_20000pesos_actual_dorso.jpg' }
             ]
         }
+        // ... (resto de las denominaciones con sus versiones)
     ],
     "Brasil": [
         {
