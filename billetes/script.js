@@ -3201,7 +3201,7 @@ function cargarImagenConDelay(imgElement, src, alt) {
         imgElement.onerror = () => {
             imgElement.src = 'ruta/a/imagen/por/defecto.jpg';
         };
-    }, 250);
+    }, 100);
 }
 
 function abrirModal(imagenSrc, altText) {
