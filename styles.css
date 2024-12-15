@@ -1,0 +1,361 @@
+:root {
+    --color-primario: #3498db;
+    --color-secundario: #2ecc71;
+    --color-acento: #e74c3c;
+    --color-fondo: #f0f2f5;
+    --color-texto: #333;
+    --color-fondo-tarjeta: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: var(--color-primario);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 300;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-secundario);
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+main {
+    flex-grow: 1;
+    padding-top: 80px;
+}
+
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/1600x900/?finance,gold');
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.hero h3 {
+    font-size: 1.2rem;
+    font-weight: normal;
+    line-height: 1.4;
+}
+
+.app-section {
+    padding: 2rem 0;
+}
+
+.app-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.app-card {
+    background-color: var(--color-fondo-tarjeta);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1 1 300px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.app-card h2 {
+    color: var(--color-primario);
+    margin-bottom: 1rem;
+}
+
+.app-card p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.app-link {
+    display: inline-block;
+    background-color: var(--color-secundario);
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.app-link:hover {
+    background-color: #27ae60;
+}
+
+.app-card img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 1rem;
+}
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.whatsapp-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    font-size: 30px;
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-icon:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-tooltip {
+    position: absolute;
+    right: 75px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.whatsapp-button:hover .whatsapp-tooltip {
+    opacity: 1;
+}
+
+.whatsapp-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 8px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.custom-dialog {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.dialog-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 5px;
+}
+
+.dialog-buttons {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.dialog-buttons button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#dialog-cancel {
+    background-color: #ccc;
+}
+
+#dialog-confirm {
+    background-color: #4CAF50;
+    color: white;
+}
+
+footer {
+    background-color: var(--color-primario);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        height: calc(100vh - 70px);
+        background-color: var(--color-primario);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        transition: right 0.5s ease-in;
+        z-index: 1000;
+    }
+
+    .nav-links li {
+        opacity: 0;
+        margin: 15px 0;
+    }
+
+    .nav-active {
+        right: 0;
+    }
+
+    .burger {
+        display: block;
+        z-index: 1001;
+    }
+
+    .burger-active .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger-active .line2 {
+        opacity: 0;
+    }
+
+    .burger-active .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .hero {
+        height: auto;
+        padding: 2rem 0;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero h2 {
+        font-size: 1.4rem;
+    }
+
+    .hero h3 {
+        font-size: 1rem;
+    }
+
+    .container {
+        width: 95%;
+        padding: 0 10px;
+    }
+
+    .app-card {
+        flex: 1 1 100%;
+    }
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}

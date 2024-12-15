@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Cotización de Oro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">FinanzaPro</div>
+            <ul class="nav-links" id="nav-links">
+                <li class="close-menu" id="close-menu">&times;</li>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../billetes/billete.html">Billetes Mundiales</a></li>
+                <li><a href="../Conversor-de-monedas/index.html">Cotizador de Divisas</a></li>
+                <li><a href="../crypto/index.html">Infocrypto</a></li>
+                <li><a href="../informacion-financiera/index.html">Artículos</a></li>
+                <li><a href="../nosotros.html">Nosotros</a></li>
+            </ul>
+            <div class="burger" id="burger-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="calculadora" class="calculadora">
+            <h1>Calculadora de Cotización de Oro</h1>
+            <div class="calculator-container">
+                <div class="input-group">
+                    <label for="item">Seleccione la moneda:</label>
+                    <select id="item" name="item">
+                        <option value="">Seleccione la moneda</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="spot">Valor del spot:</label>
+                    <input type="number" id="spot" name="spot" placeholder="Ingrese el valor del spot" step="0.01">
+                </div>
+                <div class="input-group">
+                    <label for="porcentaje">Porcentaje:</label>
+                    <input type="text" id="porcentaje" name="porcentaje" placeholder="Ingrese el porcentaje">
+                </div>
+                <div id="resultados" class="resultados">
+                    <div class="resultado-card">
+                        <h3 class="resultado-titulo">Valor de compra</h3>
+                        <div class="resultado-valor" id="valor_compra">U$S 0.00</div>
+                        <div class="resultado-barra-contenedor">
+                            <div class="resultado-barra" id="barra_compra"></div>
+                        </div>
+                    </div>
+                    <div class="resultado-card">
+                        <h3 class="resultado-titulo">Valor de venta</h3>
+                        <div class="resultado-valor" id="valor_venta">U$S 0.00</div>
+                        <div class="resultado-barra-contenedor">
+                            <div class="resultado-barra" id="barra_venta"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="gram-value-container" class="value-container">
+                <h2 class="value-title">Valor por gramo de oro</h2>
+                <div class="value-display">
+                    <span id="gram-value" class="value">U$S 0.00</span>
+                </div>
+                <div class="value-bar-container">
+                    <div id="gram-value-bar" class="value-bar"></div>
+                </div>
+            </div>
+            <div id="spot-value-container" class="value-container">
+                <h2 class="value-title">Valor spot del ítem</h2>
+                <div class="value-display">
+                    <span id="spot-value" class="value">U$S 0.00</span>
+                </div>
+                <div class="value-bar-container">
+                    <div id="spot-value-bar" class="value-bar"></div>
+                </div>
+            </div>
+            <div id="imagen-item" class="imagen-item">
+                <img id="imagen-moneda" src="" alt="Imagen de la moneda" class="lazy-load">
+                <div class="item-info">
+                    <p>Peso en oro: <span id="peso-oro"></span></p>
+                    <p>Peso bruto: <span id="peso-bruto"></span></p>
+                    <p>Peso en onzas: <span id="peso-onzas"></span></p>
+                    <p>Diámetro: <span id="diametro"></span></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="modal" class="modal">
+        <span class="cerrar">&times;</span>
+        <img id="modal-imagen" class="modal-content" src="" alt="Imagen ampliada de la moneda">
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 FinanzaPro. Todos los derechos reservados.</p>
+            <p>Diseño JPBM</p>
+        </div>
+        <div id="donate-button-container">
+            <div id="donate-button"></div>
+            <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+            <script>
+                PayPal.Donation.Button({
+                    env:'production',
+                    hosted_button_id:'X875W7JUCUMRE',
+                    image: {
+                        src:'https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif',
+                        alt:'Donate with PayPal button',
+                        title:'PayPal - The safer, easier way to pay online!',
+                    }
+                }).render('#donate-button');
+            </script>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

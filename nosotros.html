@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - FinanzaPro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primario: #1a73e8;
+            --color-secundario: #34a853;
+            --color-acento: #ea4335;
+            --color-fondo: #f8f9fa;
+            --color-texto: #202124;
+            --color-fondo-tarjeta: #ffffff;
+            --color-sombra: rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--color-fondo-tarjeta);
+            box-shadow: 0 2px 4px var(--color-sombra);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primario);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: var(--color-texto);
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-primario);
+        }
+
+        .burger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: var(--color-texto);
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .fullscreen-section {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            scroll-snap-align: start;
+            padding: 4rem 0;
+        }
+
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://source.unsplash.com/1600x900/?finance,team');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 6rem 0;
+        }
+
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .app-card {
+            background-color: var(--color-fondo-tarjeta);
+            border-radius: 10px;
+            padding: 3rem;
+            box-shadow: 0 10px 20px var(--color-sombra);
+            width: 100%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .app-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .app-card h2 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--color-primario);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .app-card p {
+            margin-bottom: 1.5rem;
+            color: var(--color-texto);
+        }
+
+        .services-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .services-list li {
+            margin-bottom: 2rem;
+        }
+
+        .services-list h3 {
+            color: var(--color-secundario);
+            margin-bottom: 0.5rem;
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--color-primario);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 2px 10px var(--color-sombra);
+        }
+
+        .scroll-to-top:hover {
+            background-color: var(--color-secundario);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background-color: var(--color-fondo-tarjeta);
+            color: var(--color-texto);
+            text-align: center;
+            padding: 1rem;
+            box-shadow: 0 -2px 4px var(--color-sombra);
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                right: -100%;
+                top: 70px;
+                height: calc(100vh - 70px);
+                background-color: var(--color-fondo-tarjeta);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                transition: right 0.5s ease-in;
+                box-shadow: -2px 0 5px var(--color-sombra);
+            }
+
+            .nav-links li {
+                opacity: 0;
+                margin: 15px 0;
+            }
+
+            .nav-active {
+                right: 0;
+            }
+
+            .burger {
+                display: block;
+            }
+
+            .burger-active .line1 {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .burger-active .line2 {
+                opacity: 0;
+            }
+
+            .burger-active .line3 {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .app-card {
+                padding: 2rem;
+            }
+        }
+
+        @keyframes navLinkFade {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">FinanzaPro</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="burger" id="burger-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main">
+        <section class="hero fullscreen-section">
+            <div class="container">
+                <h1>Sobre Nosotros</h1>
+                <h2>Conoce más sobre FinanzaPro</h2>
+            </div>
+        </section>
+
+        <section class="about-section fullscreen-section">
+            <div class="container">
+                <div class="app-card">
+                    <h2>Quiénes Somos</h2>
+                    <p>
+                        FinanzaPro nació de la visión de un grupo de expertos financieros y desarrolladores tecnológicos con el objetivo de democratizar el acceso a información financiera crucial. Entendemos que en el mundo actual, donde los mercados financieros están en constante evolución, es fundamental contar con herramientas precisas y actualizadas para tomar decisiones informadas.
+                    </p>
+                    <p>
+                        Nuestra misión es proporcionar a inversores, empresarios y entusiastas de las finanzas una plataforma integral que ofrezca datos en tiempo real, análisis profundos y herramientas de cálculo avanzadas. Creemos firmemente que el conocimiento es poder, especialmente en el ámbito financiero, y nos esforzamos por hacer que ese conocimiento sea accesible para todos.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section fullscreen-section">
+            <div class="container">
+                <div class="app-card">
+                    <h2>Nuestros Servicios</h2>
+                    <ul class="services-list">
+                        <li>
+                            <h3>Calculadora Avanzada de Precios de Oro</h3>
+                            <p>Nuestra calculadora de oro te permite obtener cotizaciones precisas en tiempo real. Ya sea que estés considerando invertir en oro o simplemente quieras estar al tanto de las fluctuaciones del mercado, esta herramienta te proporciona los datos que necesitas para tomar decisiones informadas.</p>
+                        </li>
+                        <li>
+                            <h3>Cotizador Mundial de Divisas</h3>
+                            <p>Con nuestro cotizador de divisas, puedes acceder a tasas de cambio actualizadas para una amplia gama de monedas internacionales. Esta herramienta es esencial para viajeros, comerciantes internacionales e inversores en el mercado forex.</p>
+                        </li>
+                        <li>
+                            <h3>Guía de Billetes Vigentes</h3>
+                            <p>Nuestra guía detallada de billetes te ofrece información completa sobre las denominaciones actuales de diferentes países. Es una herramienta invaluable para coleccionistas, viajeros y profesionales que trabajan con divisas extranjeras.</p>
+                        </li>
+                        <li>
+                            <h3>Información Financiera Actualizada</h3>
+                            <p>Mantenemos a nuestros usuarios informados con las últimas noticias y análisis del mundo financiero. Nuestro equipo de expertos proporciona insights valiosos sobre tendencias del mercado, eventos económicos globales y oportunidades de inversión.</p>
+                        </li>
+                        <li>
+                            <h3>Seguimiento de Criptomonedas</h3>
+                            <p>En el dinámico mundo de las criptomonedas, ofrecemos cotizaciones en tiempo real de las 20 criptomonedas más importantes del mercado. Esta sección es crucial para inversores y entusiastas que desean mantenerse al día con este mercado en rápida evolución.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="commitment-section fullscreen-section">
+            <div class="container">
+                <div class="app-card">
+                    <h2>Nuestro Compromiso</h2>
+                    <p>
+                        En FinanzaPro, nos comprometemos a proporcionar información precisa, actualizada y fácil de entender. Nuestro equipo trabaja incansablemente para garantizar que nuestros usuarios tengan acceso a los datos más recientes y las herramientas más eficaces para navegar el complejo mundo de las finanzas.
+                    </p>
+                    <p>
+                        Valoramos la transparencia, la precisión y la accesibilidad. Creemos que cada persona, independientemente de su nivel de experiencia en finanzas, merece tener acceso a información de calidad que les ayude a tomar decisiones financieras sólidas.
+                    </p>
+                    <p>
+                        Estamos constantemente innovando y mejorando nuestras herramientas y servicios basándonos en los comentarios de nuestros usuarios y los cambios en el panorama financiero global. Tu éxito financiero es nuestro éxito, y estamos aquí para apoyarte en cada paso de tu viaje financiero.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <button id="scroll-to-top" class="scroll-to-top" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <footer>
+        <div id="donate-button-container">
+            <div id="donate-button"></div>
+            <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+            <script>
+            PayPal.Donation.Button({
+            env:'production',
+            hosted_button_id:'X875W7JUCUMRE',
+            image: {
+            src:'https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif',
+            alt:'Donate with PayPal button',
+            title:'PayPal - The safer, easier way to pay online!',
+            }
+            }).render('#donate-button');
+            </script>
+        </div>
+            
+        <div class="container">
+            <p>&copy; 2024 FinanzaPro. Todos los derechos reservados.</p>
+            <p>Diseño JPBM</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            inicializarEventListeners();
+            inicializarScrollToTop();
+            inicializarAnimacionesScroll();
+        });
+
+        function inicializarEventListeners() {
+            const burger = document.getElementById('burger-menu');
+            const navLinks = document.getElementById('nav-links');
+            
+            burger.addEventListener('click', () => {
+                navLinks.classList.toggle('nav-active');
+                burger.classList.toggle('burger-active');
+                animateNavLinks();
+            });
+
+            // Cerrar el menú al hacer clic en un enlace
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('nav-active');
+                    burger.classList.remove('burger-active');
+                });
+            });
+
+            // Cerrar el menú al hacer clic fuera de él
+            document.addEventListener('click', (event) => {
+                const isClickInsideNav = navLinks.contains(event.target);
+                const isClickOnBurger = burger.contains(event.target);
+                
+                if (!isClickInsideNav && !isClickOnBurger && navLinks.classList.contains('nav-active')) {
+                    navLinks.classList.remove('nav-active');
+                    burger.classList.remove('burger-active');
+                }
+            });
+        }
+
+        function animateNavLinks() {
+            const navItems = document.querySelectorAll('.nav-links li');
+            navItems.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                }
+            });
+        }
+
+        function inicializarScrollToTop() {
+            const scrollToTopButton = document.getElementById('scroll-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 100) {
+                    scrollToTopButton.style.display = 'flex';
+                } else {
+                    scrollToTopButton.style.display = 'none';
+                }
+            });
+
+            scrollToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        function inicializarAnimacionesScroll() {
+            const cards = document.querySelectorAll('.app-card');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+        }
+
+        // Añadir efecto de parallax al hero
+        window.addEventListener('scroll', () => {
+            const hero = document.querySelector('.hero');
+            const scrollPosition = window.pageYOffset;
+            hero.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Información Financiera - Oro y Divisas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">FinanzaPro</div>
+            <div class="burger" id="burger-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main">
+        <section id="inicio" class="hero fullscreen-section">
+            <div class="container">
+                <h1>Plataforma de Información Financiera</h1>
+                <h2>Oro y Divisas en Tiempo Real</h2>
+                <p class="hero-description">Toma decisiones informadas en un mercado financiero global en constante cambio. Accede a datos precisos y actualizados sobre divisas, oro y criptomonedas para proteger tu capital y aprovechar oportunidades de inversión.</p>
+            </div>
+        </section>
+
+        <section id="calculadora" class="app-section fullscreen-section">
+            <div class="container">
+                <div class="app-card">
+                    <i class="fas fa-calculator icon"></i>
+                    <h2>Calculadora Avanzada de Precios de Oro</h2>
+                    <p>Optimiza tus inversiones en oro con nuestra calculadora en tiempo real. Compara precios, analiza tendencias y proyecta ganancias potenciales.</p>
+                    <a href="calculadora/index.html" class="app-link">Ir a la Calculadora</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="cotizador" class="app-section fullscreen-section">
+            <div class="container">
+                <div class="app-card">
+                    <i class="fas fa-exchange-alt icon"></i>
+                    <h2>Cotizador Mundial de Divisas</h2>
+                    <p>Accede a cotizaciones actualizadas de las principales divisas mundiales. Compara tasas de cambio y prevé tendencias futuras.</p>
+                    <a href="Conversor-de-monedas/index.html" class="app-link">Ir al Cotizador</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="billetes" class="app-section fullscreen-section">
+            <div class="container">
+                <div class="app-card">
+                    <i class="fas fa-money-bill-wave icon"></i>
+                    <h2>Guía de Billetes Vigentes</h2>
+                    <p>Explora nuestra guía completa de billetes mundiales. Descubre diseños, medidas de seguridad y valores de cambio actuales.</p>
+                    <a href="billetes/billete.html" class="app-link">Ver Billetes</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="noticias" class="app-section fullscreen-section">
+            <div class="container">
+                <div class="app-card">
+                    <i class="fas fa-newspaper icon"></i>
+                    <h2>Información Financiera Actualizada</h2>
+                    <p>Mantente al día con las últimas noticias financieras, análisis de mercado y tendencias económicas globales.</p>
+                    <a href="informacion-financiera/index.html" class="app-link">Últimas Noticias</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="crypto" class="app-section fullscreen-section">
+            <div class="container">
+                <div class="app-card">
+                    <i class="fab fa-bitcoin icon"></i>
+                    <h2>Criptomonedas</h2>
+                    <p>Consulta las cotizaciones en tiempo real de las 20 criptomonedas más importantes del mercado.</p>
+                    <a href="crypto/index.html" class="app-link">Ver Criptomonedas</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <button id="scroll-to-top" class="scroll-to-top" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <footer>
+        <div id="donate-button-container">
+            <div id="donate-button"></div>
+            <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+            <script>
+            PayPal.Donation.Button({
+            env:'production',
+            hosted_button_id:'X875W7JUCUMRE',
+            image: {
+            src:'https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif',
+            alt:'Donate with PayPal button',
+            title:'PayPal - The safer, easier way to pay online!',
+            }
+            }).render('#donate-button');
+            </script>
+        </div>
+            
+        <div class="container">
+            <p>&copy; 2024 FinanzaPro. Todos los derechos reservados.</p>
+            <p>Diseño JPBM</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

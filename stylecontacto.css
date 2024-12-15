@@ -1,0 +1,294 @@
+:root {
+    --color-primario: #1a73e8;
+    --color-secundario: #34a853;
+    --color-acento: #ea4335;
+    --color-fondo: #f8f9fa;
+    --color-texto: #202124;
+    --color-fondo-tarjeta: #ffffff;
+    --color-sombra: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: var(--color-fondo-tarjeta);
+    box-shadow: 0 2px 4px var(--color-sombra);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primario);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: var(--color-texto);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-primario);
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-texto);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.fullscreen-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+}
+
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://source.unsplash.com/1600x900/?finance,contact');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-section {
+    background-color: var(--color-fondo);
+}
+
+.contact-card {
+    background-color: var(--color-fondo-tarjeta);
+    border-radius: 10px;
+    padding: 3rem;
+    box-shadow: 0 10px 20px var(--color-sombra);
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-info h2 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-primario);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.contact-info ul {
+    list-style: none;
+}
+
+.contact-info li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info li i {
+    margin-right: 1rem;
+    color: var(--color-primario);
+}
+
+.social-media h3 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-primario);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-primario);
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: var(--color-secundario);
+    transform: translateY(-2px);
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--color-primario);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 2px 10px var(--color-sombra);
+}
+
+.scroll-to-top:hover {
+    background-color: var(--color-secundario);
+    transform: translateY(-2px);
+}
+
+footer {
+    background-color: var(--color-fondo-tarjeta);
+    color: var(--color-texto);
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 -2px 4px var(--color-sombra);
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        height: calc(100vh - 70px);
+        background-color: var(--color-fondo-tarjeta);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        transition: right 0.5s ease-in;
+        box-shadow: -2px 0 5px var(--color-sombra);
+    }
+
+    .nav-links li {
+        opacity: 0;
+        margin: 15px 0;
+    }
+
+    .nav-active {
+        right: 0;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .burger-active .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger-active .line2 {
+        opacity: 0;
+    }
+
+    .burger-active .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .contact-card {
+        padding: 2rem;
+    }
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversor de Monedas Global con Banderas</title>
+  <style>
+    :root {
+      --primary-color: #3498db;
+      --secondary-color: #2ecc71;
+      --accent-color: #e74c3c;
+      --background-color: #ecf0f1;
+      --text-color: #34495e;
+      --card-background: #ffffff;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /* Cambié esto para que el contenido se distribuya mejor */
+      align-items: center;
+      height: 100vh; /* Ocupar toda la altura de la pantalla */
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      box-sizing: border-box;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+    .converter {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+      height: 100%;
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 1.5rem;
+    }
+    header {
+      background-color: #3498db;
+      color: white;
+      padding: 0; /* Elimino margen superior */
+      text-align: center;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    header h1 {
+      margin: 0;
+    }
+    input, select {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+      min-width: 100%;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #result {
+      margin-top: 1rem;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    #exchangeRate {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    #navbar {
+    background-color: #3498db;
+    padding: 0.5rem 1rem;
+}
+
+#navbar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#navbar ul li {
+    margin: 0 0.5rem;
+}
+
+#navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+#navbar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+.mobile-menu {
+    display: none;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.mobile-menu ul {
+    list-style-type: none;
+}
+
+.mobile-menu ul li {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.mobile-menu ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+.app-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 800px;
+    width: 100%;
+}
+
+.app-card {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.app-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.app-card h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.app-card p {
+    margin-bottom: 1.5rem;
+}
+
+.app-link {
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.app-link:hover {
+    background-color: var(--accent-color);
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+    width: 100%;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Plataforma de Información Financiera</h1>
+      <nav id="navbar">
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="converter">
+      <h1>Conversor de Monedas Global</h1>
+      <input type="number" id="amount" placeholder="Ingrese la cantidad">
+      <div class="currency-container">
+        <select id="fromCurrency"></select>
+        <img id="fromFlag" class="flag" src="" alt="From Currency Flag">
+      </div>
+      <div class="currency-container">
+        <select id="toCurrency"></select>
+        <img id="toFlag" class="flag" src="" alt="To Currency Flag">
+      </div>
+      <button onclick="convertCurrency()">Convertir</button>
+      <div id="result"></div>
+      <div id="exchangeRate"></div>
+    </div>
+    
+    <footer>
+      <p>&copy; 2024 Plataforma de Información Financiera. Todos los derechos reservados.</p>
+      <p>Diseño JPBM</p>
+    </footer>
+  </div>
+
+  <script>
+    const apiUrl = 'https://api.exchangerate-api.com/v4/latest/USD';
+    let exchangeRates = {};
+
+    async function fetchCurrencies() {
+      try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        exchangeRates = data.rates;
+        
+        const fromSelect = document.getElementById('fromCurrency');
+        const toSelect = document.getElementById('toCurrency');
+        
+        const commonCurrencies = {
+          USD: "Dólar estadounidense",
+          EUR: "Euro",
+          JPY: "Yen japonés",
+          GBP: "Libra esterlina",
+          AUD: "Dólar australiano",
+          CAD: "Dólar canadiense",
+          CHF: "Franco suizo",
+          CNY: "Yuan chino",
+          SEK: "Corona sueca",
+          NZD: "Dólar neozelandés",
+          MXN: "Peso mexicano",
+          SGD: "Dólar de Singapur",
+          HKD: "Dólar de Hong Kong",
+          NOK: "Corona noruega",
+          KRW: "Won surcoreano",
+          TRY: "Lira turca",
+          RUB: "Rublo ruso",
+          INR: "Rupia india",
+          BRL: "Real brasileño",
+          ZAR: "Rand sudafricano",
+          DKK: "Corona danesa",
+          PLN: "Zloty polaco",
+          THB: "Baht tailandés",
+          IDR: "Rupia indonesia",
+          HUF: "Forinto húngaro",
+          CZK: "Corona checa",
+          ILS: "Nuevo séquel israelí",
+          CLP: "Peso chileno",
+          PHP: "Peso filipino",
+          AED: "Dirham de los Emiratos Árabes Unidos",
+          COP: "Peso colombiano",
+          SAR: "Riyal saudí",
+          MYR: "Ringgit malayo",
+          RON: "Leu rumano"
+        };
+
+        for (const [code, name] of Object.entries(commonCurrencies)) {
+          if (code in exchangeRates) {
+            const option1 = new Option(`${code} - ${name}`, code);
+            const option2 = new Option(`${code} - ${name}`, code);
+            fromSelect.add(option1);
+            toSelect.add(option2);
+          }
+        }
+
+        for (const currency in exchangeRates) {
+          if (!(currency in commonCurrencies)) {
+            const fullName = getCurrencyFullName(currency);
+            const option1 = new Option(`${currency} - ${fullName}`, currency);
+            const option2 = new Option(`${currency} - ${fullName}`, currency);
+            fromSelect.add(option1);
+            toSelect.add(option2);
+          }
+        }
+
+        fromSelect.value = 'USD';
+        toSelect.value = 'EUR';
+        updateFlag('fromCurrency', 'fromFlag');
+        updateFlag('toCurrency', 'toFlag');
+        fromSelect.addEventListener('change', () => updateFlag('fromCurrency', 'fromFlag'));
+        toSelect.addEventListener('change', () => updateFlag('toCurrency', 'toFlag'));
+
+      } catch (error) {
+        console.error('Error al cargar las monedas:', error);
+      }
+    }
+
+    function getCurrencyFullName(currencyCode) {
+      const currencyNames = {
+        AFA: "Afgani afgano",
+        ALL: "Lek albanés",
+        DZD: "Dinar argelino",
+        AOA: "Kwanza angoleño",
+        ARS: "Peso argentino",
+        AMD: "Dram armenio",
+        AWG: "Florín arubeño",
+        AZN: "Manat azerbaiyano",
+        BSD: "Dólar bahameño",
+        BHD: "Dinar bahreiní",
+        BDT: "Taka bangladesí",
+        BBD: "Dólar barbadense",
+        BYN: "Rublo bielorruso",
+        BZD: "Dólar beliceño",
+        BMD: "Dólar bermudeño",
+        BTN: "Ngultrum butanés",
+        BOB: "Boliviano",
+        BAM: "Marco convertible",
+        BWP: "Pula botsuano",
+        BND: "Dólar de Brunéi",
+        BGN: "Lev búlgaro",
+        BIF: "Franco burundés",
+        KHR: "Riel camboyano",
+        CVE: "Escudo caboverdiano",
+        KYD: "Dólar de las Islas Caimán",
+        XAF: "Franco CFA de África Central",
+        XPF: "Franco CFP",
+        CRC: "Colón costarricense",
+        HRK: "Kuna croata",
+        CUP: "Peso cubano",
+        CUC: "Peso cubano convertible",
+        DJF: "Franco yibutiano",
+        DOP: "Peso dominicano",
+        XCD: "Dólar del Caribe Oriental",
+        EGP: "Libra egipcia",
+        ERN: "Nakfa eritreo",
+        ETB: "Birr etíope",
+        FJD: "Dólar fiyiano",
+        GMD: "Dalasi gambiano",
+        GEL: "Lari georgiano",
+        GHS: "Cedi ghanés",
+        GIP: "Libra gibraltareña",
+        GTQ: "Quetzal guatemalteco",
+        GNF: "Franco guineano",
+        GYD: "Dólar guyanés",
+        HTG: "Gourde haitiano",
+        HNL: "Lempira hondureño",
+        ISK: "Corona islandesa",
+        IRR: "Rial iraní",
+        IQD: "Dinar iraquí",
+        JMD: "Dólar jamaiquino",
+        JOD: "Dinar jordano",
+        KZT: "Tenge kazajo",
+        KES: "Chelín keniano",
+        KWD: "Dinar kuwaití",
+        KGS: "Som kirguís",
+        LAK: "Kip laosiano",
+        LBP: "Libra libanesa",
+        LSL: "Loti lesotense",
+        LRD: "Dólar liberiano",
+        LYD: "Dinar libio",
+        MOP: "Pataca macaense",
+        MKD: "Denar macedonio",
+        MGA: "Ariary malgache",
+        MWK: "Kwacha malauí",
+        MVR: "Rufiyaa maldiva",
+        MRU: "Uguiya mauritano",
+        MUR: "Rupia mauriciana",
+        MDL: "Leu moldavo",
+        MNT: "Tugrik mongol",
+        MAD: "Dírham marroquí",
+        MZN: "Metical mozambiqueño",
+        MMK: "Kyat birmano",
+        NAD: "Dólar namibio",
+        NPR: "Rupia nepalí",
+        NIO: "Córdoba nicaragüense",
+        NGN: "Naira nigeriano",
+        OMR: "Rial omaní",
+        PKR: "Rupia pakistaní",
+        PAB: "Balboa panameño",
+        PGK: "Kina papú",
+        PYG: "Guaraní paraguayo",
+        PEN: "Sol peruano",
+        QAR: "Riyal qatarí",
+        RSD: "Dinar serbio",
+        SCR: "Rupia seychellense",
+        SLL: "Leone sierraleonés",
+        SBD: "Dólar de las Islas Salomón",
+        SOS: "Chelín somalí",
+        LKR: "Rupia de Sri Lanka",
+        SDG: "Libra sudanesa",
+        SRD: "Dólar surinamés",
+        SZL: "Lilangeni suazi",
+        SYP: "Libra siria",
+        TJS: "Somoni tayiko",
+        TZS: "Chelín tanzano",
+        TOP: "Paʻanga tongano",
+        TTD: "Dólar de Trinidad y Tobago",
+        TND: "Dinar tunecino",
+        TMT: "Manat turcomano",
+        UGX: "Chelín ugandés",
+        UAH: "Grivna ucraniana",
+        UYU: "Peso uruguayo",
+        UZS: "Som uzbeko",
+        VUV: "Vatu vanuatuense",
+        VES: "Bolívar soberano venezolano",
+        VND: "Dong vietnamita",
+        YER: "Rial yemení",
+        ZMW: "Kwacha zambiano",
+        ZWL: "Dólar zimbabuense"
+      };
+      
+      return currencyNames[currencyCode] || `Moneda de ${currencyCode}`;
+    }
+
+    function updateFlag(selectId, flagId) {
+      const select = document.getElementById(selectId);
+      const flag = document.getElementById(flagId);
+      const currencyCode = select.value.slice(0, 2).toLowerCase();
+      flag.src = `https://flagcdn.com/w40/${currencyCode}.png`;
+      flag.alt = `Bandera de ${select.options[select.selectedIndex].text}`;
+    }
+
+    async function convertCurrency() {
+      const amount = document.getElementById('amount').value;
+      const fromCurrency = document.getElementById('fromCurrency').value;
+      const toCurrency = document.getElementById('toCurrency').value;
+      const resultDiv = document.getElementById('result');
+      const exchangeRateDiv = document.getElementById('exchangeRate');
+
+      if (!amount || !fromCurrency || !toCurrency) {
+        resultDiv.textContent = 'Por favor, complete todos los campos.';
+        exchangeRateDiv.textContent = '';
+        return;
+      }
+
+      resultDiv.innerHTML = '<div class="loading"></div>';
+      exchangeRateDiv.textContent = '';
+
+      try {
+        const fromRate = exchangeRates[fromCurrency];
+        const toRate = exchangeRates[toCurrency];
+        const convertedAmount = (amount / fromRate) * toRate;
+        const exchangeRatioForward = toRate / fromRate;
+        const exchangeRatioReverse = fromRate / toRate;
+        
+        resultDiv.textContent = `${amount} ${fromCurrency} = ${convertedAmount.toFixed(2)} ${toCurrency}`;
+        exchangeRateDiv.innerHTML = `Tasas de cambio:<br>
+          1 ${fromCurrency} = ${exchangeRatioForward.toFixed(6)} ${toCurrency}<br>
+          1 ${toCurrency} = ${exchangeRatioReverse.toFixed(6)} ${fromCurrency}`;
+      } catch (error) {
+        console.error('Error en la conversión:', error);
+        resultDiv.textContent = 'Ocurrió un error en la conversión. Por favor, intente nuevamente.';
+        exchangeRateDiv.textContent = '';
+      }
+    }
+
+    fetchCurrencies();
+  </script>
+</body>
+</html>

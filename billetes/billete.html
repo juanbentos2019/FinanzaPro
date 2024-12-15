@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billetes Vigentes del Mundo - Plataforma de Información Financiera</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">FinanzaPro</div>
+            <div class="burger" id="burger-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../calculadora/index.html">Cotizador de Oro</a></li>
+                <li><a href="../Conversor-de-monedas/index.html">Cotizador de Divisas</a></li>
+                <li><a href="../crypto/index.html">Infocrypto</a></li>
+                <li><a href="../informacion-financiera/index.html">Artículos</a></li>
+                <li><a href="../nosotros.html">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main">
+        <section id="inicio" class="hero">
+            <div class="container">
+                <h1>Billetes Vigentes del Mundo</h1>
+                <p class="hero-description">Explore la diversidad monetaria global con nuestra completa guía de billetes vigentes. Ideal para coleccionistas, viajeros y entusiastas de las finanzas internacionales.</p>
+            </div>
+        </section>
+
+        <section class="billetes-section">
+            <div class="container">
+                <h2>Explora Billetes por País</h2>
+
+                <div class="form-group">
+                    <label for="pais">Selecciona un país:</label>
+                    <select id="pais" class="select-custom">
+                        <option value="">Elige un país</option>
+                    </select>
+                </div>
+
+                <div id="billetes-container" class="billetes-container" style="display: none;">
+                    <div id="pais-info" class="pais-info"></div>
+                    <h3>Denominaciones disponibles:</h3>
+                    <div id="billetes-lista" class="billetes-lista"></div>
+                </div>
+
+                <div id="imagen-billete" class="imagen-billete" style="display: none;">
+                    <div class="version-selector">
+                        <label for="version-select">Versión del billete:</label>
+                        <select id="version-select" class="select-custom"></select>
+                    </div>
+
+                    <div class="imagenes-container">
+                        <div class="imagen-wrapper">
+                            <h4>Anverso</h4>
+                            <img id="imagen-billete-frente" src="" alt="Anverso del billete">
+                        </div>
+                        <div class="imagen-wrapper dorso">
+                            <h4>Reverso</h4>
+                            <img id="imagen-billete-dorso" src="" alt="Reverso del billete">
+                        </div>
+                    </div>
+
+                    <div class="datos-billete">
+                        <p><strong>Denominación:</strong> <span id="denominacion"></span></p>
+                        <p><strong>Año de emisión:</strong> <span id="anio-emision"></span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="arrow left-arrow" id="left-arrow">&#10094;</span>
+            <span class="arrow right-arrow" id="right-arrow">&#10095;</span>
+            <span class="close">&times;</span>
+            <img id="modal-image" src="" alt="Imagen ampliada del billete">
+        </div>
+    </div>
+
+    <footer>
+        <div id="donate-button-container">
+            <div id="donate-button"></div>
+            <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+            <script>
+            PayPal.Donation.Button({
+            env:'production',
+            hosted_button_id:'X875W7JUCUMRE',
+            image: {
+            src:'https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif',
+            alt:'Donate with PayPal button',
+            title:'PayPal - The safer, easier way to pay online!',
+            }
+            }).render('#donate-button');
+            </script>
+        </div>
+            
+        <div class="container">
+            <p>&copy; 2024 FinanzaPro. Todos los derechos reservados.</p>
+            <p>Diseño JPBM</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+

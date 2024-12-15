@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Información Financiera - Oro y Divisas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">FinanzaPro</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../billetes/billete.html">Billetes Mundiales</a></li>
+                <li><a href="../calculadora/index.html">Cotizador de Oro</a></li>
+                <li><a href="../Conversor-de-monedas/index.html">Cotizador de Divisas</a></li>
+                <li><a href="../informacion-financiera/index.html">Articulos relacionados</a></li>
+                <li><a href="../nosotros.html">Nosotros</a></li>
+            </ul>
+            <div class="burger" id="burger-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main">
+        <section id="inicio" class="hero fullscreen-section">
+            <div class="container">
+                <h1>Plataforma de Información Financiera</h1>
+                <h2>Oro y Divisas en Tiempo Real</h2>
+                <p class="hero-description">Toma decisiones informadas en un mercado financiero global en constante cambio. Accede a datos precisos y actualizados sobre divisas, oro y criptomonedas para proteger tu capital y aprovechar oportunidades de inversión.</p>
+            </div>
+        </section>
+
+        <section id="crypto" class="crypto-seccion fullscreen-section">
+            <div class="container">
+                <h2>Principales Criptomonedas</h2>
+                <div class="crypto-container">
+                    <table id="cryptoTable">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nombre</th>
+                                <th>Precio (USD)</th>
+                                <th>Cambio (24h)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Datos de criptomonedas se insertarán aquí -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="chartModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <div class="tab-container">
+                <button class="tab-button active" data-tab="price">Precio</button>
+                <button class="tab-button" data-tab="performance">Rendimiento</button>
+                <button class="tab-button" data-tab="volume">Volumen</button>
+            </div>
+            <p id="chartDescription"></p>
+            <div class="chart-container">
+                <canvas id="cryptoChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <button id="scroll-to-top" class="scroll-to-top" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <footer>
+        <div class="container">
+            <p>Datos obtenidos de <a href="https://www.binance.com/es" target="_blank" rel="noopener noreferrer">Binance</a></p>
+            <div id="donate-button-container">
+                <div id="donate-button"></div>
+                <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+                <script>
+                PayPal.Donation.Button({
+                env:'production',
+                hosted_button_id:'X875W7JUCUMRE',
+                image: {
+                src:'https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif',
+                alt:'Donate with PayPal button',
+                title:'PayPal - The safer, easier way to pay online!',
+                }
+                }).render('#donate-button');
+                </script>
+            </div>
+                
+            <div class="container">
+                <p>&copy; 2024 FinanzaPro. Todos los derechos reservados.</p>
+                <p>Diseño JPBM</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
