@@ -16,8 +16,12 @@ const modalImage = document.getElementById('modal-image');
 const closeBtn = document.getElementsByClassName('close')[0];
 const versionSelect = document.getElementById('version-select');
 const paisInfo = document.getElementById('pais-info');
+const leftArrow = document.getElementById('left-arrow');
+const rightArrow = document.getElementById('right-arrow');
 
 let paisActual = '';
+let imagenActual = '';
+let imagenesBilleteActual = [];
 
 const billetesEuro = [
     {
@@ -77,6 +81,7 @@ const billetesEuro = [
         ]
     }
 ];
+
 
 const paisesBilletes = {
     "Alemania": billetesEuro,
@@ -3032,7 +3037,7 @@ const paisesBilletes = {
         
     
     ]
-};
+}
 
 function inicializarEventListeners() {
     paisSelect.addEventListener('change', (e) => {
@@ -3045,6 +3050,9 @@ function inicializarEventListeners() {
     });
 
     closeBtn.addEventListener('click', cerrarModal);
+    
+    leftArrow.addEventListener('click', () => cambiarImagen('anterior'));
+    rightArrow.addEventListener('click', () => cambiarImagen('siguiente'));
 
     window.addEventListener('click', (e) => {
         if (e.target === modal) {
@@ -3052,17 +3060,29 @@ function inicializarEventListeners() {
         }
     });
 
+    document.addEventListener('keydown', (e) => {
+        if (modal.style.display === "block") {
+            if (e.key === "ArrowLeft") {
+                cambiarImagen('anterior');
+            } else if (e.key === "ArrowRight") {
+                cambiarImagen('siguiente');
+            } else if (e.key === "Escape") {
+                cerrarModal();
+            }
+        }
+    });
+
     const burgerMenu = document.getElementById('burger-menu');
     const navLinks = document.getElementById('nav-links');
 
-    burgerMenu.addEventListener('click', () => {
+    burgerMenu?.addEventListener('click', () => {
         navLinks.classList.toggle('nav-active');
         burgerMenu.classList.toggle('burger-active');
         animarNavLinks();
     });
 
-    imagenBilleteFrente.addEventListener('click', () => abrirModal(imagenBilleteFrente.src, imagenBilleteFrente.alt));
-    imagenBilleteDorso.addEventListener('click', () => abrirModal(imagenBilleteDorso.src, imagenBilleteDorso.alt));
+    imagenBilleteFrente.addEventListener('click', () => abrirModal(imagenBilleteFrente.src));
+    imagenBilleteDorso.addEventListener('click', () => abrirModal(imagenBilleteDorso.src));
 }
 
 function animarNavLinks() {
@@ -3148,7 +3168,6 @@ function obtenerCodigoPais(pais) {
         "Eslovaquia": "sk", "Eslovenia": "sl", "Estonia": "ee", "Finlandia": "fi",
         "Grecia": "gr", "Irlanda": "ie", "Letonia": "lv", "Lituania": "lt",
         "Luxemburgo": "lu", "Malta": "mt", "Países Bajos": "nl", "Portugal": "pt"
-
     };
     return codigosPais[pais] || "";
 }
@@ -3181,8 +3200,18 @@ function mostrarVersionBillete(billete, versionIndex) {
     if (billete.versiones && billete.versiones[versionIndex]) {
         const version = billete.versiones[versionIndex];
         
-        cargarImagenConDelay(imagenBilleteFrente, version.imagenFrente, `Anverso del billete de ${billete.denominacion} de ${paisActual} (${version.anioEmision})`);
-        cargarImagenConDelay(imagenBilleteDorso, version.imagenDorso, `Reverso del billete de ${billete.denominacion} de ${paisActual} (${version.anioEmision})`);
+        // Limpiamos cualquier transición pendiente
+        imagenBilleteFrente.style.transition = 'none';
+        imagenBilleteDorso.style.transition = 'none';
+        
+        // Forzamos un reflow
+        void imagenBilleteFrente.offsetWidth;
+        void imagenBilleteDorso.offsetWidth;
+        
+        cargarImagenConDelay(imagenBilleteFrente, version.imagenFrente, 
+            `Anverso del billete de ${billete.denominacion} de ${paisActual} (${version.anioEmision})`);
+        cargarImagenConDelay(imagenBilleteDorso, version.imagenDorso, 
+            `Reverso del billete de ${billete.denominacion} de ${paisActual} (${version.anioEmision})`);
 
         denominacionElement.textContent = billete.denominacion;
         anioEmisionElement.textContent = version.anioEmision;
@@ -3190,65 +3219,66 @@ function mostrarVersionBillete(billete, versionIndex) {
 }
 
 function cargarImagenConDelay(imgElement, src, alt) {
+    // Primero ocultamos la imagen actual
     imgElement.style.opacity = 0;
+
+    // Esperamos a que se complete la transición de fade out
     setTimeout(() => {
+        // Configuramos la nueva imagen pero la mantenemos invisible
+        imgElement.style.visibility = 'hidden';
         imgElement.src = src || '';
         imgElement.alt = alt;
+        
+        // Cuando la imagen está cargada, la hacemos visible y aplicamos el fade in
         imgElement.onload = () => {
-            imgElement.style.transition = 'opacity .5s';
-            imgElement.style.opacity = 1;
+            imgElement.style.visibility = 'visible';
+            imgElement.style.transition = 'opacity 0.3s ease-in-out';
+            // Pequeño delay antes de hacer el fade in
+            requestAnimationFrame(() => {
+                imgElement.style.opacity = 1;
+            });
         };
+
         imgElement.onerror = () => {
             imgElement.src = 'ruta/a/imagen/por/defecto.jpg';
+            imgElement.style.visibility = 'visible';
+            imgElement.style.opacity = 1;
         };
-    }, 100);
+    }, 300); // Reducimos el tiempo de delay
 }
 
-function abrirModal(imagenSrc, altText) {
+function abrirModal(imagenSrc) {
     modal.style.display = "block";
     modalImage.src = imagenSrc;
-    modalImage.alt = altText;
+    imagenActual = imagenSrc;
+    imagenesBilleteActual = [imagenBilleteFrente.src, imagenBilleteDorso.src];
+    actualizarVisibilidadFlechas();
+}
+
+function cambiarImagen(direccion) {
+    const indiceActual = imagenesBilleteActual.indexOf(imagenActual);
+    let nuevoIndice;
+
+    if (direccion === 'anterior') {
+        nuevoIndice = indiceActual <= 0 ? imagenesBilleteActual.length - 1 : indiceActual - 1;
+    } else {
+        nuevoIndice = indiceActual >= imagenesBilleteActual.length - 1 ? 0 : indiceActual + 1;
+    }
+
+    imagenActual = imagenesBilleteActual[nuevoIndice];
+    modalImage.src = imagenActual;
+    actualizarVisibilidadFlechas();
+}
+
+function actualizarVisibilidadFlechas() {
+    leftArrow.style.display = "block";
+    rightArrow.style.display = "block";
 }
 
 function cerrarModal() {
     modal.style.display = "none";
+    imagenActual = '';
+    imagenesBilleteActual = [];
 }
 
-let indiceImagenActual = 0;
-const imagenesModal = [];
-
-function abrirModalConImagenes(imagenes, indice) {
-    imagenesModal.length = 0;
-    imagenesModal.push(...imagenes);
-    indiceImagenActual = indice;
-    actualizarModal();
-    modal.style.display = "block";
-}
-
-function actualizarModal() {
-    modalImage.src = imagenesModal[indiceImagenActual];
-    modalImage.alt = `Imagen ${indiceImagenActual + 1} de ${imagenesModal.length}`;
-}
-
-function navegarModal(direccion) {
-    indiceImagenActual += direccion;
-    if (indiceImagenActual < 0) {
-        indiceImagenActual = imagenesModal.length - 1;
-    } else if (indiceImagenActual >= imagenesModal.length) {
-        indiceImagenActual = 0;
-    }
-    actualizarModal();
-}
-
-document.getElementById('flecha-izquierda').addEventListener('click', () => navegarModal(-1));
-document.getElementById('flecha-derecha').addEventListener('click', () => navegarModal(1));
-
-document.querySelectorAll('.contenedor-imagenes img').forEach((img, index) => {
-    img.addEventListener('click', () => {
-        const imagenes = Array.from(document.querySelectorAll('.contenedor-imagenes img')).map(i => i.src);
-        abrirModalConImagenes(imagenes, index);
-    });
-});
-
-console.log("Script actualizado con éxito. Se ha optimizado la estructura de datos para los billetes del euro y se ha agregado un retraso de 1 segundo con efecto de fade-in al cargar las imágenes de los billetes.");
-
+console.log("Script actualizado con éxito. Se ha agregado la funcionalidad de navegación entre imágenes en el modal.");
