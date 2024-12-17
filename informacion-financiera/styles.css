@@ -16,9 +16,6 @@
 
 html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
-    width: 100%;
-    position: relative;
 }
 
 body {
@@ -26,22 +23,17 @@ body {
     background-color: var(--color-fondo);
     color: var(--color-texto);
     line-height: 1.6;
-    width: 100%;
-    overflow-x: hidden;
-    position: relative;
 }
 
 .container {
-    width: 100%;
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    position: relative;
 }
 
 header {
-    background-color: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(5px);
+    background-color: var(--color-fondo-tarjeta);
     box-shadow: 0 2px 4px var(--color-sombra);
     padding: 1rem 0;
     position: fixed;
@@ -54,11 +46,6 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
 }
 
 .logo {
@@ -91,8 +78,6 @@ nav {
 .burger {
     display: none;
     cursor: pointer;
-    position: relative;
-    z-index: 1001;
 }
 
 .burger div {
@@ -109,7 +94,6 @@ nav {
     align-items: center;
     justify-content: center;
     scroll-snap-align: start;
-    padding: 80px 0;
 }
 
 .hero {
@@ -118,7 +102,6 @@ nav {
     background-position: center;
     color: white;
     text-align: center;
-    margin-top: 0;
 }
 
 .hero h1 {
@@ -152,8 +135,8 @@ nav {
     box-shadow: 0 10px 20px var(--color-sombra);
     width: 90%;
     max-width: 1200px;
-    text-align: center;
     margin: 0 auto;
+    text-align: center;
     opacity: 0;
     transform: translateX(-100%);
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -243,51 +226,31 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-    nav {
-        position: relative;
-        width: 100%;
-        margin: 0 auto;
-    }
-
-    .burger {
-        display: block;
-        position: absolute;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 1001;
-    }
-
     .nav-links {
         position: fixed;
         right: -100%;
         top: 70px;
         height: calc(100vh - 70px);
-        background-color: rgba(255, 255, 255, 0.95);
+        background-color: var(--color-fondo-tarjeta);
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
         width: 100%;
         transition: right 0.5s ease-in;
+        box-shadow: -2px 0 5px var(--color-sombra);
     }
 
     .nav-links li {
         opacity: 0;
-        margin: 30px 0;
-        text-align: center;
-        width: 100%;
+        margin: 15px 0;
     }
 
-    .nav-links a {
-        font-size: 1.5rem;
-        display: block;
-        width: 100%;
-        padding: 10px 0;
-    }
-
-    .nav-links.nav-active {
+    .nav-active {
         right: 0;
+    }
+
+    .burger {
+        display: block;
     }
 
     .burger-active .line1 {
@@ -317,26 +280,6 @@ footer {
 
     .blog-container {
         gap: 2rem;
-    }
-}
-
-@media screen and (min-width: 769px) {
-    .nav-links {
-        display: flex;
-        position: static;
-        height: auto;
-        background: none;
-        box-shadow: none;
-        width: auto;
-        flex-direction: row;
-    }
-
-    .nav-links li {
-        margin: 0 0 0 20px;
-    }
-
-    .burger {
-        display: none;
     }
 }
 
