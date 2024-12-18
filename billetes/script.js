@@ -586,7 +586,7 @@ const paisesBilletes = {
         {
             denominacion: '10 Francos Suizos',
             versiones: [
-                { anioEmision: '2017', imagenFrente: 'ruta/a/suiza/suiza_10francos_anterior_frente.jpg', imagenDorso: 'ruta/a/suiza/suiza_10francos_anterior_dorso.jpg' }
+                { anioEmision: '2017', imagenFrente: 'ruta/a/Suiza/suiza_10francos_anterior_frente.jpg', imagenDorso: 'ruta/a/Suiza/suiza_10francos_anterior_dorso.jpg' }
                 
                 
             ]
@@ -594,7 +594,7 @@ const paisesBilletes = {
         {
             denominacion: '20 Francos Suizos',
             versiones: [
-                { anioEmision: '2017', imagenFrente: 'ruta/a/suiza/suiza_20francos_anterior_frente.jpg', imagenDorso: 'ruta/a/suiza/suiza_20francos_anterior_dorso.jpg' }
+                { anioEmision: '2017', imagenFrente: 'ruta/a/Suiza/suiza_20francos_anterior_frente.jpg', imagenDorso: 'ruta/a/Suiza/suiza_20francos_anterior_dorso.jpg' }
                 
                 
             ]
@@ -602,7 +602,7 @@ const paisesBilletes = {
         {
             denominacion: '50 Francos Suizos',
             versiones: [
-                { anioEmision: '2016', imagenFrente: 'ruta/a/suiza/suiza_50francos_anterior_frente.jpg', imagenDorso: 'ruta/a/suiza/suiza_50francos_anterior_dorso.jpg' }
+                { anioEmision: '2016', imagenFrente: 'ruta/a/Suiza/suiza_50francos_anterior_frente.jpg', imagenDorso: 'ruta/a/Suiza/suiza_50francos_anterior_dorso.jpg' }
                 
                 
             ]
@@ -610,7 +610,7 @@ const paisesBilletes = {
         {
             denominacion: '100 Francos Suizos',
             versiones: [
-                { anioEmision: '2019', imagenFrente: 'ruta/a/suiza/suiza_100francos_anterior_frente.jpg', imagenDorso: 'ruta/a/suiza/suiza_100francos_anterior_dorso.jpg' }
+                { anioEmision: '2019', imagenFrente: 'ruta/a/Suiza/suiza_100francos_anterior_frente.jpg', imagenDorso: 'ruta/a/Suiza/suiza_100francos_anterior_dorso.jpg' }
                 
                 
             ]
@@ -618,7 +618,7 @@ const paisesBilletes = {
         {
             denominacion: '200 Francos Suizos',
             versiones: [
-                { anioEmision: '2018', imagenFrente: 'ruta/a/suiza/suiza_200francos_anterior_frente.jpg', imagenDorso: 'ruta/a/suiza/suiza_200francos_anterior_dorso.jpg' }
+                { anioEmision: '2018', imagenFrente: 'ruta/a/Suiza/suiza_200francos_anterior_frente.jpg', imagenDorso: 'ruta/a/Suiza/suiza_200francos_anterior_dorso.jpg' }
                 
                 
             ]
@@ -626,7 +626,7 @@ const paisesBilletes = {
         {
             denominacion: '1000 Francos Suizos',
             versiones: [
-                { anioEmision: '2019', imagenFrente: 'ruta/a/suiza/suiza_1000francos_anterior_frente.jpg', imagenDorso: 'ruta/a/suiza/suiza_1000francos_anterior_dorso.jpg' }
+                { anioEmision: '2019', imagenFrente: 'ruta/a/Suiza/suiza_1000francos_anterior_frente.jpg', imagenDorso: 'ruta/a/Suiza/suiza_1000francos_anterior_dorso.jpg' }
                 
                 
             ]
