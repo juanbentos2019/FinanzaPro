@@ -711,7 +711,7 @@ const itemsData = {
         pesoBruto: '2.3404 g',
         diametro: '18 mm'
     },
-    "Peru 10 Soles": {
+    "Peru 10 Soles 1950-1969": {
         imagen: 'ruta/a/imagen_peru_10_soles.jpg',
         pesoOro: '4.2123 g',
         pesoBruto: '4.68 g',
