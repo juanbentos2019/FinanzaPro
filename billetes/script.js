@@ -2163,109 +2163,6 @@ const paisesBilletes = {
             ]
         }
     ],
-    "Singapur": [
-        {
-            denominacion: '1 Dolar',
-            versiones: [
-                { anioEmision: '1967', imagenFrente: 'ruta/a/singapur/singapur_1dolar_1967_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_1dolar_1967_dorso.jpg' },
-                { anioEmision: '1976', imagenFrente: 'ruta/a/singapur/singapur_1dolar_1976_frente.jpeg', imagenDorso: 'ruta/a/singapur/singapur_1dolar_1976_dorso.jpeg' },
-                { anioEmision: '1987', imagenFrente: 'ruta/a/singapur/singapur_1dolar_1987_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_1dolar_1987_dorso.jpg' }                
-             
-            ]
-        },
-        {
-            denominacion: '2 Dolares',
-            versiones: [
-                { anioEmision: '1991', imagenFrente: 'ruta/a/singapur/singapur_2dolar_1991_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_2dolar_1991_dorso.jpg' },
-                { anioEmision: '1999', imagenFrente: 'ruta/a/singapur/singapur_2dolar_1999_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_2dolar_1999_dorso.jpg' }               
-             
-            ]
-        },
-        {
-            denominacion: '5 Dolares',
-            versiones: [
-                { anioEmision: '1967', imagenFrente: 'ruta/a/singapur/singapur_5dolar_1967_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_5dolar_1967_dorso.jpg' },
-                { anioEmision: '1976', imagenFrente: 'ruta/a/singapur/singapur_5dolar_1976_frente.jpeg', imagenDorso: 'ruta/a/singapur/singapur_5dolar_1976_dorso.jpeg'},
-                { anioEmision: '1989', imagenFrente: 'ruta/a/singapur/singapur_5dolar_1989_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_5dolar_1989_dorso.jpg' },
-                { anioEmision: '1999', imagenFrente: 'ruta/a/singapur/singapur_5dolar_1999_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_5dolar_1999_dorso.jpg' }               
-             
-            ]
-        },
-        {
-            denominacion: '10 Dolares',
-            versiones: [
-                { anioEmision: '1967', imagenFrente: 'ruta/a/singapur/singapur_10dolar_1967_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_10dolar_1967_dorso.jpg' },
-                { anioEmision: '1976', imagenFrente: 'ruta/a/singapur/singapur_10dolar_1976_frente.jpeg', imagenDorso: 'ruta/a/singapur/singapur_10dolar_1976_dorso.jpeg'},
-                { anioEmision: '1988', imagenFrente: 'ruta/a/singapur/singapur_10dolar_1988_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_10dolar_1988_dorso.jpg' },
-                { anioEmision: '1999', imagenFrente: 'ruta/a/singapur/singapur_10dolar_1999_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_10dolar_1999_dorso.jpg' }               
-             
-            ]
-        },
-        {
-            denominacion: '20 Dolares',
-            versiones: [
-                { anioEmision: '1979', imagenFrente: 'ruta/a/singapur/singapur_20dolar_1979_frente.jpeg', imagenDorso: 'ruta/a/singapur/singapur_20dolar_1979_dorso.jpeg' }                             
-             
-            ]
-        },
-        {
-            denominacion: '25 Dolares',
-            versiones: [
-                { anioEmision: '1967', imagenFrente: 'ruta/a/singapur/singapur_25dolar_1967_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_25dolar_1967_dorso.jpg' }                             
-             
-            ]
-        },
-        {
-            denominacion: '50 Dolares',
-            versiones: [
-                { anioEmision: '1967', imagenFrente: 'ruta/a/singapur/singapur_50dolar_1967_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_50dolar_1967_dorso.jpg' },
-                { anioEmision: '1976', imagenFrente: 'ruta/a/singapur/singapur_50dolar_1976_frente.jpeg', imagenDorso: 'ruta/a/singapur/singapur_50dolar_1976_dorso.jpeg'},
-                { anioEmision: '1987', imagenFrente: 'ruta/a/singapur/singapur_50dolar_1987_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_50dolar_1987_dorso.jpg' },
-                { anioEmision: '1999', imagenFrente: 'ruta/a/singapur/singapur_50dolar_1999_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_50dolar_1999_dorso.jpg' }               
-             
-            ]
-        },
-        {
-            denominacion: '100 Dolares',
-            versiones: [
-                { anioEmision: '1967', imagenFrente: 'ruta/a/singapur/singapur_100dolar_1967_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_100dolar_1967_dorso.jpg' },
-                { anioEmision: '1977', imagenFrente: 'ruta/a/singapur/singapur_100dolar_1976_frente.jpeg', imagenDorso: 'ruta/a/singapur/singapur_100dolar_1976_dorso.jpeg'},
-                { anioEmision: '1985', imagenFrente: 'ruta/a/singapur/singapur_100dolar_1985_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_100dolar_1985_dorso.jpg' },
-                { anioEmision: '1999', imagenFrente: 'ruta/a/singapur/singapur_100dolar_1999_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_100dolar_1999_dorso.jpg' }               
-             
-            ]
-        },
-        {
-            denominacion: '500 Dolares',
-            versiones: [
-                { anioEmision: '1967', imagenFrente: 'ruta/a/singapur/singapur_500dolar_1967_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_500dolar_1967_dorso.jpg' },
-                { anioEmision: '1977', imagenFrente: 'ruta/a/singapur/singapur_500dolar_1977_frente.jpeg', imagenDorso: 'ruta/a/singapur/singapur_500dolar_1977_dorso.jpeg'},
-                { anioEmision: '1988', imagenFrente: 'ruta/a/singapur/singapur_500dolar_1988_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_500dolar_1988_dorso.jpg' }
-                               
-             
-            ]
-        },
-        {
-            denominacion: '1000 Dolares',
-            versiones: [
-                { anioEmision: '1967', imagenFrente: 'ruta/a/singapur/singapur_1000dolar_1967_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_1000dolar_1967_dorso.jpg' },
-                { anioEmision: '1978', imagenFrente: 'ruta/a/singapur/singapur_1000dolar_1978_frente.jpeg', imagenDorso: 'ruta/a/singapur/singapur_1000dolar_1978_dorso.jpeg'},
-                { anioEmision: '1984', imagenFrente: 'ruta/a/singapur/singapur_1000dolar_1984_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_1000dolar_1984_dorso.jpg' },
-                { anioEmision: '1999', imagenFrente: 'ruta/a/singapur/singapur_1000dolar_1999_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_1000dolar_1999_dorso.jpg' }               
-             
-            ]
-        },
-        {
-            denominacion: '10000 Dolares',
-            versiones: [
-                { anioEmision: '1973', imagenFrente: 'ruta/a/singapur/singapur_10000dolar_1973_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_10000dolar_1973_dorso.jpg' },
-                { anioEmision: '1980', imagenFrente: 'ruta/a/singapur/singapur_10000dolar_1980_frente.jpeg', imagenDorso: 'ruta/a/singapur/singapur_10000dolar_1980_dorso.jpeg'},
-                { anioEmision: '1989', imagenFrente: 'ruta/a/singapur/singapur_10000dolar_1989_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_10000dolar_1989_dorso.jpg' },
-                { anioEmision: '1999', imagenFrente: 'ruta/a/singapur/singapur_10000dolar_1999_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_10000dolar_1999_dorso.jpg' }               
-             
-            ]
-        }
-    ],
     "Islandia": [
         {
             denominacion: '500 Coronas',
@@ -3036,7 +2933,80 @@ const paisesBilletes = {
                 
             ]
         }
-    ]
+    ],
+    "Singapur": [
+        {
+            denominacion: '1 Dolar',
+            versiones: [
+                { anioEmision: '1967', imagenFrente: 'ruta/a/singapur/singapur_1dolar_1967_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_1dolar_1967_dorso.jpg' },
+                { anioEmision: '1976', imagenFrente: 'ruta/a/singapur/singapur_1dolar_1976_frente.jpeg', imagenDorso: 'ruta/a/singapur/singapur_1dolar_1976_dorso.jpeg' },
+                { anioEmision: '1987', imagenFrente: 'ruta/a/singapur/singapur_1dolar_1987_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_1dolar_1987_dorso.jpg' }                
+             
+            ]
+        },
+        {
+            denominacion: '2 Dolares',
+            versiones: [
+                { anioEmision: '1991', imagenFrente: 'ruta/a/singapur/singapur_2dolar_1991_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_2dolar_1991_dorso.jpg' },
+                { anioEmision: '1999', imagenFrente: 'ruta/a/singapur/singapur_2dolar_1999_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_2dolar_1999_dorso.jpg' }               
+             
+            ]
+        },
+        {
+            denominacion: '5 Dolares',
+            versiones: [
+                { anioEmision: '1967', imagenFrente: 'ruta/a/singapur/singapur_5dolar_1967_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_5dolar_1967_dorso.jpg' },
+                { anioEmision: '1976', imagenFrente: 'ruta/a/singapur/singapur_5dolar_1976_frente.jpeg', imagenDorso: 'ruta/a/singapur/singapur_5dolar_1976_dorso.jpeg'},
+                { anioEmision: '1989', imagenFrente: 'ruta/a/singapur/singapur_5dolar_1989_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_5dolar_1989_dorso.jpg' },
+                { anioEmision: '1999', imagenFrente: 'ruta/a/singapur/singapur_5dolar_1999_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_5dolar_1999_dorso.jpg' }               
+             
+            ]
+        },
+        {
+            denominacion: '10 Dolares',
+            versiones: [
+                { anioEmision: '1967', imagenFrente: 'ruta/a/singapur/singapur_10dolar_1967_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_10dolar_1967_dorso.jpg' },
+                { anioEmision: '1976', imagenFrente: 'ruta/a/singapur/singapur_10dolar_1976_frente.jpeg', imagenDorso: 'ruta/a/singapur/singapur_10dolar_1976_dorso.jpeg'},
+                { anioEmision: '1988', imagenFrente: 'ruta/a/singapur/singapur_10dolar_1988_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_10dolar_1988_dorso.jpg' },
+                { anioEmision: '1999', imagenFrente: 'ruta/a/singapur/singapur_10dolar_1999_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_10dolar_1999_dorso.jpg' }               
+             
+            ]
+        },
+        {
+            denominacion: '20 Dolares',
+            versiones: [
+                { anioEmision: '1979', imagenFrente: 'ruta/a/singapur/singapur_20dolar_1979_frente.jpeg', imagenDorso: 'ruta/a/singapur/singapur_20dolar_1979_dorso.jpeg' }                             
+             
+            ]
+        },
+        {
+            denominacion: '25 Dolares',
+            versiones: [
+                { anioEmision: '1967', imagenFrente: 'ruta/a/singapur/singapur_25dolar_1967_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_25dolar_1967_dorso.jpg' }                             
+             
+            ]
+        },
+        {
+            denominacion: '50 Dolares',
+            versiones: [
+                { anioEmision: '1967', imagenFrente: 'ruta/a/singapur/singapur_50dolar_1967_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_50dolar_1967_dorso.jpg' },
+                { anioEmision: '1976', imagenFrente: 'ruta/a/singapur/singapur_50dolar_1976_frente.jpeg', imagenDorso: 'ruta/a/singapur/singapur_50dolar_1976_dorso.jpeg'},
+                { anioEmision: '1987', imagenFrente: 'ruta/a/singapur/singapur_50dolar_1987_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_50dolar_1987_dorso.jpg' },
+                { anioEmision: '1999', imagenFrente: 'ruta/a/singapur/singapur_50dolar_1999_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_50dolar_1999_dorso.jpg' }               
+             
+            ]
+        },
+        {
+            denominacion: '100 Dolares',
+            versiones: [
+                { anioEmision: '1967', imagenFrente: 'ruta/a/singapur/singapur_100dolar_1967_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_100dolar_1967_dorso.jpg' },
+                { anioEmision: '1977', imagenFrente: 'ruta/a/singapur/singapur_100dolar_1976_frente.jpeg', imagenDorso: 'ruta/a/singapur/singapur_100dolar_1976_dorso.jpeg'},
+                { anioEmision: '1985', imagenFrente: 'ruta/a/singapur/singapur_100dolar_1985_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_100dolar_1985_dorso.jpg' },
+                { anioEmision: '1999', imagenFrente: 'ruta/a/singapur/singapur_100dolar_1999_frente.jpg', imagenDorso: 'ruta/a/singapur/singapur_100dolar_1999_dorso.jpg' }               
+             
+            ]
+        }
+    ]    
 }
 
 function inicializarEventListeners() {
