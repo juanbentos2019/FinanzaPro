@@ -741,13 +741,13 @@ const itemsData = {
         pesoBruto: '46.80 g',
         diametro: '36 mm'
     },
-    "Peru 100 Soles (CASA DE LA MONEDA-1965)": {
+    "Peru 100 Soles (Casa de la Moneda-1965)": {
         imagen: 'ruta/a/imagen_peru_100_soles_moneda.jpg',
         pesoOro: '42.12 g',
         pesoBruto: '46.80 g',
         diametro: '36 mm'
     },
-    "Peru 100 Soles (BATALLA DE CALLAO-1965)": {
+    "Peru 100 Soles (Batalla DE Callao-1965)": {
         imagen: 'ruta/a/imagen_peru_100_soles_callao.jpg',
         pesoOro: '42.12 g',
         pesoBruto: '46.80 g',
