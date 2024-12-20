@@ -717,11 +717,17 @@ const itemsData = {
         pesoBruto: '4.68 g',
         diametro: '22 mm'
     },
-    "Peru 20 Soles": {
+    "Peru 20 Soles 1950-1969": {
         imagen: 'ruta/a/imagen_peru_20_soles.jpg',
         pesoOro: '8.4246 g',
         pesoBruto: '9.3614 g',
         diametro: '23 mm'
+    },
+    "Peru 20 soles 1863": {
+        imagen: 'ruta/a/imagen_peru_20_soles1863.jpg',
+        pesoOro: '29.0323 g',
+        pesoBruto: '32.2581 g',
+        diametro: '34 mm'
     },
     "Peru 50 Soles": {
         imagen: 'ruta/a/imagen_peru_50_soles.jpg',
@@ -729,8 +735,20 @@ const itemsData = {
         pesoBruto: '23.40 g',
         diametro: '30 mm'
     },
-    "Peru 100 Soles": {
+    "Peru 100 Soles 1950-1970": {
         imagen: 'ruta/a/imagen_peru_100_soles.jpg',
+        pesoOro: '42.12 g',
+        pesoBruto: '46.80 g',
+        diametro: '36 mm'
+    },
+    "Peru 100 Soles (CASA DE LA MONEDA-1965)": {
+        imagen: 'ruta/a/imagen_peru_100_soles_moneda.jpg',
+        pesoOro: '42.12 g',
+        pesoBruto: '46.80 g',
+        diametro: '36 mm'
+    },
+    "Peru 100 Soles (BATALLA DE CALLAO-1965)": {
+        imagen: 'ruta/a/imagen_peru_100_soles_callao.jpg',
         pesoOro: '42.12 g',
         pesoBruto: '46.80 g',
         diametro: '36 mm'
